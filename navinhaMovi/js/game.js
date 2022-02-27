@@ -41,6 +41,7 @@ let config = {
     type: Phaser.AUTO,
     width: screenW,
     height: screenH,
+    pixelArt: true,
     scene: gameScene,
 };
 
