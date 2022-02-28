@@ -9,7 +9,7 @@ const config = {
     backgroundColor: '#333333',
     type: Phaser.AUTO,
     parent: "phaser-game",
-    scene: [],
+    scene: [MainScene],
 };
 
 new Phaser.Game(config);
