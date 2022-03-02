@@ -1,4 +1,4 @@
-import CardBase from './CardBase.js';
+import CardPlayer from "./CardPlayer.js";
 
 export default class MainScene extends Phaser.Scene {
     constructor() {
@@ -26,18 +26,21 @@ export default class MainScene extends Phaser.Scene {
         this.load.image('Player-Armor', '../assets/Armor-Icon.png');
         this.load.image('Death', '../assets/Death-Icon.png');
 
-        //this.load.bitMapFont('')
+        // font
+        this.load.bitmapFont('pressStart', 'assets/Font/pressStart.png', 'assets/Font/pressStart.fnt');
     };
 
     create() {
-        this.player = new CardBase({
+        this.player = new CardPlayer({
             scene: this,
             name: 'Hero',
-            x: 0,
-            y: 0,
+            x: this.game.config.width / 2,
+            y: this.game.config.height - 200,
             card: 'Player-Card',
             image: 'Hero',
             depth: 1,
+            health: 16,
+            onDragEnd: (pointer, gameObject) => {},
         });
     };
 };
